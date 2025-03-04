@@ -105,6 +105,6 @@ library.add(
 
 export default {
     install(app: App) {
-        app.component(FontAwesomeIcon.name, FontAwesomeIcon);
+        app.component("font-awesome-icon", FontAwesomeIcon);
     }
 }
