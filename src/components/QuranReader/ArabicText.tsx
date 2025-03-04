@@ -272,7 +272,7 @@ export default defineComponent({
                                 [styles.highlight_word]: this.isHighlightWord(word.position),
                                 "ps-2": this.showTransliterationInline
                             }]}
-                            onInit={this.onInitTooltip(word.position)}
+                            // onInit={this.onInitTooltip(word.position)}
                             {
                                 ...{
                                     "data-word-position": word.position,

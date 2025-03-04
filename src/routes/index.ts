@@ -64,11 +64,11 @@ const routes: RouteRecordRaw[] = [
         }
     },
     {
-        path: "/register",
-        name: "register",
-        component: () => import("@/views/Auth/Register"),
+        path: "/bookmark",
+        name: "bookmark",
+        component: () => import("@/views/Bookmark/Bookmark"),
         meta: {
-            title: "Login"
+            title: "Bookmark"
         }
     },
     {

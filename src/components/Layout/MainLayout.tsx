@@ -20,6 +20,7 @@ import {
   faSignInAlt,
   faUserPlus,
   faSignOutAlt,
+  faBookmark, // Tambahkan ikon bookmark
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -65,6 +66,11 @@ export default defineComponent({
       isLoggedIn.value = false;
       localStorage.removeItem("isLoggedIn");
       router.push({ name: "login" });
+    }
+
+    // Fungsi untuk navigasi ke halaman bookmark
+    function gotoBookmark() {
+      router.push({ name: "bookmark" });
     }
 
     fullscreen.onFullscreenChange((isFs: boolean) => {
@@ -140,6 +146,7 @@ export default defineComponent({
       gotoRoute,
       isLoggedIn,
       logout,
+      gotoBookmark, // Tambahkan fungsi gotoBookmark
     };
   },
   render() {
@@ -209,6 +216,19 @@ export default defineComponent({
                   </div>
                   <div>
                     <div class="d-flex">
+                      {/* Tambahkan tombol bookmark di sini */}
+                      <div
+                        class={["me-2", styles.nav_menu_item]}
+                        onClick={this.gotoBookmark}
+                      >
+                        <Tooltip title="Bookmark">
+                          <font-awesome-icon
+                            icon={faBookmark}
+                            class={styles.icon}
+                          />
+                        </Tooltip>
+                      </div>
+
                       {this.isLoggedIn ? (
                         // Tampilkan tombol Logout jika sudah login
                         <div
